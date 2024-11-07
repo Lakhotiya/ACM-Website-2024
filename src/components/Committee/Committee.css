@@ -1,27 +1,34 @@
+/* Basic Reset and Styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 120vh;
+  min-height: 150vh; /* Adjust for larger height */
   width: 100%;
   background: transparent;
+  padding-top: 0px; /* Remove or adjust padding */
 }
 
+/* Make container larger and adjust position */
 .container3 {
   position: relative;
-  width: 600px;
-  height: 600px;
-  border: 2px solid #6085DB;
+  width: 800px;
+  height: 800px;
+  border: 3px solid #6085DB;
   border-radius: 50%;
+  margin-top: -100px; /* Adjust this value to reduce distance from top */
 }
 
+
+/* Adjust individual committee icons */
 .container3 .icon {
   position: absolute;
   width: 100%;
@@ -33,19 +40,19 @@ main {
 
 .container3 .icon .imgBx {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 125px;
+  height: 125px;
   border-radius: 50%;
-  border: 1px solid #60D3DB;
-  box-shadow: 0 0 0 4px #0079C2, 0 0 0 6px #60DB91;
-  transform: rotate(calc(360deg / 8 * var(--i))) translateX(300px) rotate(calc(-360deg / 8 * var(--i)));
+  border: 2px solid #60D3DB;
+  box-shadow: 0 0 0 6px #0079C2, 0 0 0 8px #60DB91;
+  transform: rotate(calc(360deg / 8 * var(--i))) translateX(400px) rotate(calc(-360deg / 8 * var(--i)));
   transition: 0.5s;
   z-index: 100;
   overflow: hidden;
 }
 
 .container3 .icon .imgBx.active {
-  box-shadow: 0 0 0 6px #60DBBB, 0 0 0 12px #0099F5;
+  box-shadow: 0 0 0 8px #60DBBB, 0 0 0 16px #0099F5;
 }
 
 .container3 .icon .imgBx img {
@@ -61,6 +68,7 @@ main {
   filter: grayscale(0);
 }
 
+/* Content adjustments */
 .content {
   position: absolute;
   inset: 0;
@@ -74,16 +82,17 @@ main {
 .content::after {
   content: "";
   position: absolute;
-  inset: 100px;
-  border: 4px solid transparent;
-  border-left: 4px solid #0099F5;
-  border-right: 4px solid #60D3DB;
+  inset: 120px;
+  border: 5px solid transparent;
+  border-left: 5px solid #0099F5;
+  border-right: 5px solid #60D3DB;
   border-radius: 50%;
   animation: animate_02 2.5s linear infinite;
   z-index: 1;
   pointer-events: none;
 }
 
+/* Keyframes for rotation */
 @keyframes animate_02 {
   0% {
     transform: rotate(360deg);
@@ -93,6 +102,7 @@ main {
   }
 }
 
+/* Active content scaling */
 .contentBx {
   position: absolute;
   transform: scale(0);
@@ -101,7 +111,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 70%;
+  max-width: 80%;
 }
 
 .contentBx.active {
@@ -110,109 +120,67 @@ main {
   transition-delay: 0.5s;
 }
 
+/* Adjust content box (center card) to be circular and prevent overflow */
 .contentBx .card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: #fff;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.contentBx .card .imgBx {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.contentBx .card .imgBx img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 1rem; /* Reduced padding for more room */
+  width: 410px; /* Adjusted width */
+  height: 410px; /* Equal height for circular shape */
+  border-radius: 50%; /* Make it circular */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent text from overflowing outside */
 }
 
 .contentBx .card .textBx {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 21rem;
-  padding: 1rem;
+  text-align: center;
+  max-width: 85%; /* Fit within circular area */
 }
 
 .contentBx .card .textBx h2 {
-  font-size: 1.25em;
+  font-size: 1.2em; /* Adjusted font size to fit within circle */
   font-weight: 600;
   color: #000000;
-  line-height: 1.2em;
   text-transform: uppercase;
-  text-align: center;
+  line-height: 1.2em; /* Adjust line height to fit text vertically */
 }
 
 .contentBx .card .textBx h2 span {
-  font-size: 0.65em;
+  font-size: 0.8em;
   color: #000000;
   font-weight: 500;
   letter-spacing: 0.1em;
 }
 
-.container3 h2 {
-  margin-top: 0;
-}
-
-.contentBx .card .textBx .sci {
-  display: flex;
-  gap: 7px;
-  margin-top: 10px;
-}
-
-.contentBx .card .textBx .sci li {
-  list-style: none;
-}
-
-.contentBx .card .textBx .sci li a {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #444;
-  color: #000000;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: 0.5s;
-}
-
-.contentBx .card .textBx .sci li a:hover {
-  background: #2196f3;
-}
-
-.team {
-  font-size: 50px;
-  font-weight: bolder;
-  color: rgb(0, 0, 0);
-}
-
 @media (max-width: 768px) {
   .container3 {
-    width: 400px;
-    height: 400px;
-    right: 0;
-    border-radius: 0%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
   }
 
-  .container3 .icon {
-    position: static;
+  .container3 .icon .imgBx {
+    width: 60px;
+    height: 60px;
+    transform: rotate(calc(360deg / 8 * var(--i))) translateX(200px) rotate(calc(-360deg / 8 * var(--i)));
   }
 
-  .content,
-  .contentBx {
-    display: block;
-    text-align: center;
+  .contentBx .card {
+    width: 200px;
+    height: 200px;
   }
 
-  .team {
-    font-size: 30px;
+  .contentBx .card .textBx h2 {
+    font-size: 1.1em;
+  }
+
+  .contentBx .card .textBx h2 span {
+    font-size: 0.7em;
   }
 }

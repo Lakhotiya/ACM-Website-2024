@@ -11,7 +11,7 @@ margin: 0;
 }
 .nav{
 height: 80px;
-background-color: #091b61;
+background-color: #3F72AF;
 color: white;
 display: flex;
 justify-content: space-between;
@@ -27,10 +27,11 @@ padding: 0;
 margin: 0;
 list-style: none;
 display: flex;
-gap: 1.5rem;
+gap: 4rem;
 justify-content: center;
 flex-grow: 1;
 filter: drop-shadow(2px 2px 3px #000);
+font-size: 1.3rem;
 }
 .nav a{
 color: inherit;
@@ -57,7 +58,7 @@ height: 4rem;
 .nav li.active{
     color: #07c6e3;
     font-weight: bold;
-    transform: scale(1.4);
+    transform: scale(1);
 }
 
 .nav li:hover{
