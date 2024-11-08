@@ -1,0 +1,43 @@
+.video-background-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 5%; /* Position to the left */
+  transform: translateY(-50%); /* Vertically center content */
+  color: white;
+  text-align: left; /* Align text to the left */
+  z-index: 1;
+  padding-left: 20px; /* Optional padding from the left */
+}
+
+.text-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.text-overlay p {
+  font-size: 1.5rem;
+}
+
+img {
+  height: 20vh;
+  margin-bottom: 20px; /* Space between the logo and text */
+  position: relative;
+  top: 10%; /* Fine-tune the position of the image */
+}

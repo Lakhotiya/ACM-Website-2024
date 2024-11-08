@@ -1,92 +1,60 @@
-import React, { useRef } from 'react';
-import * as Ladda from 'ladda';
-import 'ladda/dist/ladda.min.css'; 
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import React, { useRef, useEffect } from 'react';
+import './home.css';
 
-const DesignerButton = ({ text }) => {
-  const buttonRef = useRef(null);
+export default function Home() {
+  const videoRef = useRef(null);
 
-  const handleClick = () => {
-    const laddaInstance = Ladda.create(buttonRef.current);
+  useEffect(() => {
+    // Disable scrolling on body when Home component is mounted
+    document.body.style.overflow = "hidden";
 
-    laddaInstance.start();
+    // Cleanup: re-enable scrolling when Home component is unmounted
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
-    setTimeout(() => {
-      laddaInstance.stop(); 
-      window.location.href = 'https://konfhub.com/checkout/upesacm-acmw-registration?ticketId=8618';
-    }, 1500); 
+  const handleVideoEnd = () => {
+    if (videoRef.current) {
+      reverseVideo();
+    }
+  };
 
+  const reverseVideo = () => {
+    const video = videoRef.current;
+    const duration = video.duration;
+    let reverseTime = duration;
+
+    const reverseInterval = setInterval(() => {
+      if (reverseTime > 0) {
+        reverseTime -= 0.05;
+        video.currentTime = reverseTime;
+      } else {
+        clearInterval(reverseInterval);
+        video.currentTime = 0;
+        video.play();
+      }
+    }, 16);
   };
 
   return (
-    <button
-      ref={buttonRef}
-      className="ladda-button"
-      data-style="expand-left"
-      data-color="blue" // Use predefined color
-      size="Extra Large"
-      onClick={handleClick}
-    >
-      <span className="ladda-label">{text}</span>
-    </button>
-  );
-};
-
-export default function Home() {
-  return (
-    <div 
-      style={{
-        display: 'flex',
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        height: '100vh', 
-        width: '100vw', 
-        margin: 0, 
-        padding: 0, 
-        backgroundColor: '#271549', // Example background color
-      }}
-    >
-      <div 
-        style={{
-          display: 'flex',
-          alignItems: 'center', 
-          gap: '2rem', 
-          textAlign :'start', // Center text inside the container
-        }}
+    <section className="video-background-section">
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        className="background-video"
+        onEnded={handleVideoEnd} 
       >
-        <div style={{ paddingRight: '20vw', paddingBottom: '29vh',paddingTop : '20vh' }}>
-          <Typography variant='h1' sx={{ color: '#F5F5DC', fontSize: '3.7rem', fontFamily: 'Garamond' }}>
-            Welcome To
-          </Typography>
-          <br />
-          <Typography variant='h1' sx={{ color: '#AAAA84', fontSize: '4rem', fontFamily: 'Poppins',fontWeight: 'bold' }}>
-            UPES ACM
-          </Typography>
-          <br /><br />
-          <Typography variant='h4' sx={{ color: 'white', fontFamily: 'Libre Baskerville' }}>
-            The BEST Student Chapter!!!
-          </Typography>
-          <br />
-          <Typography variant='h4' sx={{ color: 'white', fontFamily: 'Libre Baskerville' }}>
-            is now at UPES
-          </Typography>
-          <br />
-          <DesignerButton text={"Join Now !!!"} />
-          {/* <Button variant="text" size='large'>Join Now!!</Button> */}
-        </div>
-        <div>
-          <img 
-            src="src/assets/pankaj.jpg" 
-            alt="UPES ACM"
-            style={{
-              height: '90vh', 
-              width: '40vw', 
-              objectFit: 'cover',
-            }}
-          />
-        </div>
+        <source src="home_video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="text-overlay">
+        <img src="./acm_logo_white.png" alt="ACM Logo" />
+        <h1>UPES ACM Chapter</h1>
+        <p>Presenting to you the student chapter of Association for Computing Machinery</p>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,0 +1,89 @@
+.gallery {
+    padding: 20px;
+  }
+  
+  .gallery-section {
+    margin-bottom: 40px;
+  }
+  
+  .section-title {
+    background-color: white;
+    color: #0073e6;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 20px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .thumbnail {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0; /* Initially set opacity to 0 */
+    animation: fadeIn 1s forwards;
+    transition: transform 0.3s;
+  }
+  
+  .thumbnail:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+ 
+  .images-container .thumbnail:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .images-container .thumbnail:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .images-container .thumbnail:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  .images-container .thumbnail:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  
+  .images-container .thumbnail:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  
+  .images-container .thumbnail:nth-child(6) {
+    animation-delay: 1s;
+  }
+  
+  .images-container .thumbnail:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+  
+  .images-container .thumbnail:nth-child(8) {
+    animation-delay: 1.4s;
+  }
+  
+  .images-container .thumbnail:nth-child(9) {
+    animation-delay: 1.6s;
+  }
+  

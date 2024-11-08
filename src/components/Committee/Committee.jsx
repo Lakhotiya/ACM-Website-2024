@@ -61,6 +61,7 @@ const Committee = () => {
 
   return (
     <main>
+
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
         <div className="container3">
           <div className="icon">
@@ -72,12 +73,14 @@ const Committee = () => {
                 onMouseOver={() => handleMouseOver(`content${committee.id}`)}
               >
                 <img
-                  src={`src/assets/Committees/Committee${committee.id}.png`}
+                  src={`Committees/${committee.id}.png`}
                   alt={`Committee ${committee.name}`}
                 />
               </div>
             ))}
           </div>
+
+
 
           <div className="content">
             {committees.map((committee) => (
