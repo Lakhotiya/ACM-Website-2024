@@ -1,8 +1,9 @@
 .video-background-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 0.25vh); /* Adjust this to match the navbar height */
   overflow: hidden;
+  top: 0.25vh; /* Position the section just below the navbar */
 }
 
 .background-video {
@@ -17,27 +18,42 @@
 
 .text-overlay {
   position: absolute;
-  top: 50%;
-  left: 5%; /* Position to the left */
-  transform: translateY(-50%); /* Vertically center content */
-  color: white;
-  text-align: left; /* Align text to the left */
+  width: 100%;
+  height: 100%;
+  display: flex;
   z-index: 1;
-  padding-left: 20px; /* Optional padding from the left */
 }
 
-.text-overlay h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  padding-left: 10vh;
+  font-size: 25px;
 }
 
-.text-overlay p {
-  font-size: 1.5rem;
+.left-section h1 {
+
+  padding-top: 5vh;
 }
 
-img {
-  height: 20vh;
-  margin-bottom: 20px; /* Space between the logo and text */
-  position: relative;
-  top: 10%; /* Fine-tune the position of the image */
+.left-section img {
+  width: 40vh;
+}
+
+.right-section {
+  flex: 1;
+  overflow: hidden;
+  padding: 5vh; /* Add padding around the image */
+  padding-left: 0vh;
+  padding-bottom: 15vh;
+}
+
+.right-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

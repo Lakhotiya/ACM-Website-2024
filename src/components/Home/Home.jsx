@@ -5,10 +5,7 @@ export default function Home() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    // Disable scrolling on body when Home component is mounted
     document.body.style.overflow = "hidden";
-
-    // Cleanup: re-enable scrolling when Home component is unmounted
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -51,9 +48,14 @@ export default function Home() {
         Your browser does not support the video tag.
       </video>
       <div className="text-overlay">
-        <img src="./acm_logo_white.png" alt="ACM Logo" />
-        <h1>UPES ACM Chapter</h1>
-        <p>Presenting to you the student chapter of Association for Computing Machinery</p>
+        <div className="left-section">
+          <img src="./acm_logo_white.png" alt="ACM Logo" />
+          <h1>UPES ACM Chapter</h1>
+          <p>Presenting to you the student chapter of Association for Computing Machinery</p>
+        </div>
+        <div className="right-section">
+          <img src="group.png" alt="Valo" className="right-image" />
+        </div>
       </div>
     </section>
   );
