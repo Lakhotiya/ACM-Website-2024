@@ -1,4 +1,4 @@
-/* Basic Reset and Styling */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,27 +8,26 @@
 }
 
 main {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 150vh; /* Adjust for larger height */
+  align-items: center; */
+  min-height: 100vh; 
   width: 100%;
   background: transparent;
-  padding-top: 0px; /* Remove or adjust padding */
+  padding-top: 10rem;
+  padding-bottom: 0rem;
+  margin-bottom: 0%;
 }
 
-/* Make container larger and adjust position */
 .container3 {
   position: relative;
   width: 800px;
   height: 800px;
   border: 3px solid #6085DB;
   border-radius: 50%;
-  margin-top: -100px; /* Adjust this value to reduce distance from top */
+  margin: 0px; 
 }
 
-
-/* Adjust individual committee icons */
 .container3 .icon {
   position: absolute;
   width: 100%;
@@ -68,7 +67,6 @@ main {
   filter: grayscale(0);
 }
 
-/* Content adjustments */
 .content {
   position: absolute;
   inset: 0;
@@ -77,22 +75,22 @@ main {
   align-items: center;
   overflow: hidden;
   z-index: 1;
+  font-size: 15px;
 }
 
 .content::after {
   content: "";
   position: absolute;
   inset: 120px;
-  border: 5px solid transparent;
-  border-left: 5px solid #0099F5;
-  border-right: 5px solid #60D3DB;
+  border: 10px solid transparent;
+  border-left: 10px solid #0099F5;
+  border-right: 10px solid #60D3DB;
   border-radius: 50%;
   animation: animate_02 2.5s linear infinite;
   z-index: 1;
   pointer-events: none;
 }
 
-/* Keyframes for rotation */
 @keyframes animate_02 {
   0% {
     transform: rotate(360deg);
@@ -102,7 +100,6 @@ main {
   }
 }
 
-/* Active content scaling */
 .contentBx {
   position: absolute;
   transform: scale(0);
@@ -120,19 +117,18 @@ main {
   transition-delay: 0.5s;
 }
 
-/* Adjust content box (center card) to be circular and prevent overflow */
 .contentBx .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #fff;
-  padding: 1rem; /* Reduced padding for more room */
-  width: 410px; /* Adjusted width */
-  height: 410px; /* Equal height for circular shape */
-  border-radius: 50%; /* Make it circular */
+  padding: 1rem;
+  width: 420px;
+  height: 420px; 
+  border-radius: 50%; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Prevent text from overflowing outside */
+  overflow: hidden; 
 }
 
 .contentBx .card .textBx {
@@ -140,15 +136,15 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 85%; /* Fit within circular area */
+  max-width: 85%;
 }
 
 .contentBx .card .textBx h2 {
-  font-size: 1.2em; /* Adjusted font size to fit within circle */
+  font-size: 1.2em;
   font-weight: 600;
   color: #000000;
   text-transform: uppercase;
-  line-height: 1.2em; /* Adjust line height to fit text vertically */
+  line-height: 1.2em; 
 }
 
 .contentBx .card .textBx h2 span {
