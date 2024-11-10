@@ -91,7 +91,7 @@ body {
   transition: ease-in .4s;
 }
 
-.content {
+.content1 {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -99,6 +99,31 @@ body {
   justify-content: space-between;
   text-align: center;
 }
+
+.content1 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+  font-size: 15px;
+}
+
+.content1::after {
+  /* content: ""; */
+  position: absolute;
+  inset: 120px;
+  border: 10px solid transparent;
+  border-left: 10px solid #0099F5;
+  border-right: 10px solid #60D3DB;
+  border-radius: 50%;
+  animation: animate_02 2.5s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
 
 .social {
   display: flex;

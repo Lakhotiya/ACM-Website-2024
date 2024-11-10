@@ -74,6 +74,7 @@ const Committee = () => {
               >
                 <img
                   src={`Committees/${committee.id}.png`}
+                 
                   alt={`Committee ${committee.name}`}
                 />
               </div>
@@ -93,6 +94,7 @@ const Committee = () => {
                   <div className="textBx">
                     <h2>
                       {committee.name}
+                      <br />
                       <br />
                       <span>{committee.description}</span>
                     </h2>

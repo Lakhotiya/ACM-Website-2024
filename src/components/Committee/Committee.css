@@ -60,7 +60,7 @@ main {
   border-radius: 50%;
   object-fit: cover;
   transition: 0.5s;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
 }
 
 .container3 .icon .imgBx.active img {

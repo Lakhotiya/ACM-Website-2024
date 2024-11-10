@@ -36,6 +36,7 @@ function App() {
           <Route path="/card" element={<Card />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/committee" element={<Committee />} />
+          
         </Routes>
       </div>
 

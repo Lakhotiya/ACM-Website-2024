@@ -11,7 +11,7 @@ return (
             <div className="overlay">
                 <div className="card">
                     <img src={image} alt={name} className="card__image"/>
-                    <div className="content">
+                    <div className="content1">
                         <p className="name">{name}</p>
                         <pre className="position" >{position}, {variable}</pre>
                     </div>
